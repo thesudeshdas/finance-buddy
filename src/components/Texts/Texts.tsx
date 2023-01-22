@@ -12,7 +12,7 @@ export function Heading({
   return (
     <div className='flex items-center gap-1'>
       {leftIcon}
-      <h2 className={`text-2xl font-semibold ${color}`}>{text}</h2>
+      <h2 className={`text-2xl font-semibold text-${color}`}>{text}</h2>
       {rightIcon}
     </div>
   );
@@ -23,16 +23,22 @@ export function Subheading({
   color,
   leftIcon,
   rightIcon,
+  textAlign,
 }: {
   text: string;
   color?: string;
-  leftIcon?: any;
+  leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
+  textAlign?: string;
 }) {
   return (
-    <div className='flex items-center gap-1'>
+    <div className='text- flex items-center gap-1 '>
       {leftIcon}
-      <h2 className={`text-lg font-semibold ${color}`}>{text}</h2>
+      <h2
+        className={`text-lg font-semibold text-${color} text-${textAlign} w-full `}
+      >
+        {text}
+      </h2>
       {rightIcon}
     </div>
   );

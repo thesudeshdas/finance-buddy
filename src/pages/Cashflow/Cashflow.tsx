@@ -1,5 +1,6 @@
 import {
   Heading,
+  HalfDoughnut,
   OverviewBalanceDoughnut,
   OverviewDebtDoughnut,
   Subheading,
@@ -17,7 +18,7 @@ export default function Cashflow() {
           <OverviewBalanceDoughnut />
 
           <section className='ml-4 flex flex-col gap-1'>
-            <Heading text='Balance - ₹ 1,236' color='text-brand' />
+            <Heading text='Balance - ₹ 1,236' color='brand' />
 
             <Subheading
               text='Income - ₹ 567'
@@ -51,7 +52,37 @@ export default function Cashflow() {
         </div>
       </section>
 
-      {/* overview of expenses and incomes */}
+      <div className='flex-row-reverse justify-evenly lg:flex'>
+        {/* top spends & incomes */}
+        <section className='justify-evenly md:flex lg:w-[50%] xl:w-[35%]'>
+          {/* overview of expenses */}
+          <section className='mt-10 flex flex-col items-center'>
+            <Heading text='Top Spends' />
+
+            <div className='grid grid-cols-2 gap-x-12 lg:gap-x-8'>
+              <HalfDoughnut label='Food' />
+              <HalfDoughnut label='Rent' />
+              <HalfDoughnut label='Fuel' />
+              <HalfDoughnut label='Shopping' />
+            </div>
+          </section>
+
+          {/* overview of incomes*/}
+          <section className='mt-10 flex flex-col items-center'>
+            <Heading text='Top Incomes' />
+
+            <div className='grid grid-cols-2 gap-x-12 lg:gap-x-8'>
+              <HalfDoughnut label='Food' />
+              <HalfDoughnut label='Rent' />
+              <HalfDoughnut label='Fuel' />
+              <HalfDoughnut label='Shopping' />
+            </div>
+          </section>
+        </section>
+
+        {/* recent transactions */}
+        <section className='bg-blue-300 lg:w-[50%] '>Hello</section>
+      </div>
     </div>
   );
 }

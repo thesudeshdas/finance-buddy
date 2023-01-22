@@ -1,5 +1,6 @@
 // Charts
 // --Doughnuts
+import HalfDoughnut from './Charts/Doughnuts/HalfDoughnut';
 import OverviewBalanceDoughnut from './Charts/Doughnuts/OverviewBalanceDoughnut';
 import OverviewDebtDoughnut from './Charts/Doughnuts/OverviewDebtDoughnut';
 
@@ -17,6 +18,7 @@ import { Text } from './Texts/Texts';
 export {
   // Charts
   // -- Doughnuts
+  HalfDoughnut,
   OverviewBalanceDoughnut,
   OverviewDebtDoughnut,
 
