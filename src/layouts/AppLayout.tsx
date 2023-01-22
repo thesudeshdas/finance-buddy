@@ -3,7 +3,7 @@ import { AppFooter, TopNav } from '../components';
 
 export default function AppLayout() {
   return (
-    <div className='min-h-screen flex-col overflow-hidden bg-off-white'>
+    <div className='h-[1px] min-h-screen'>
       <TopNav />
 
       <Outlet />
