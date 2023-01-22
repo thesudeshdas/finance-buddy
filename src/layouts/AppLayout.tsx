@@ -6,7 +6,9 @@ export default function AppLayout() {
     <div className='h-[1px] min-h-screen'>
       <TopNav />
 
-      <Outlet />
+      <div className='min-h-[78vh]'>
+        <Outlet />
+      </div>
 
       <AppFooter />
     </div>

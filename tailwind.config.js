@@ -26,6 +26,7 @@ module.exports = {
         'neutral-dark': '#64748B',
         'neutral-light': '#CBD5E1',
         'accent-danger': '#DC2626',
+        'accent-info': '#2563eb'
       },
     },
   },

@@ -1,3 +1,4 @@
+import Cashflow from './Cashflow/Cashflow';
 import Home from './Home/Home';
 
-export { Home };
+export { Cashflow, Home };
