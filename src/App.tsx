@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useQuery, gql } from '@apollo/client';
 
@@ -20,28 +18,11 @@ const TRACKS = gql`
 `;
 
 function App() {
-  const { loading, error, data } = useQuery(TRACKS);
-
-  console.log({ loading, error, data });
-
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container m-10 mx-auto rounded-xl border bg-gray-200 p-8 shadow'>
+      <p className='mb-5 text-3xl font-bold text-gray-700'>Welcome!</p>
+      <p className='text-lg text-gray-500'>React and Tailwind CSS in action</p>
     </div>
   );
 }
-
 export default App;

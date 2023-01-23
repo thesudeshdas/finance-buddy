@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Cashflow, Home } from './pages';
+import AppLayout from './layouts/AppLayout';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
@@ -12,8 +13,11 @@ const client = new ApolloClient({
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />,
+    element: <AppLayout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/cashflow', element: <Cashflow /> },
+    ],
   },
 ]);
 
