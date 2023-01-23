@@ -28,7 +28,7 @@ export default function HalfDoughnut({ label }: { label?: string }) {
         />
       </div>
 
-      <div className='-translate-y-[0%]'>
+      <div className='-translate-y-[80%]'>
         {label && <Subheading text={label} textAlign='center' />}
       </div>
     </div>
