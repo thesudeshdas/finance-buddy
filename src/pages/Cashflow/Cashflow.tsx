@@ -4,11 +4,18 @@ import {
   OverviewBalanceDoughnut,
   OverviewDebtDoughnut,
   Subheading,
+  DayTransaction,
 } from '../../components';
 
 import { HiPlus, HiMinus } from 'react-icons/hi2';
+import { txns } from '../../mockData/txns';
+import { filterTransactionsByDate } from '../../utils/fitlerTransactions';
 
 export default function Cashflow() {
+  const datedTransactions = filterTransactionsByDate(txns);
+
+  console.log({ datedTransactions });
+
   return (
     <div>
       {/* overviews with doughnuts */}
@@ -81,7 +88,15 @@ export default function Cashflow() {
         </section>
 
         {/* recent transactions */}
-        <section className='bg-blue-300 lg:w-[50%] '>Hello</section>
+        <section className='my-10 flex flex-col items-center lg:w-[50%]'>
+          <Heading text='Recent Transactions' />
+
+          <div className='w-[80%] pt-6'>
+            {datedTransactions.map(({ date, txns }) => (
+              <DayTransaction date={date} txns={txns} key={date} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

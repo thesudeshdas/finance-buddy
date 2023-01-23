@@ -15,6 +15,10 @@ import { Heading } from './Texts/Texts';
 import { Subheading } from './Texts/Texts';
 import { Text } from './Texts/Texts';
 
+// Transactions
+import DayTransaction from './Transactions/DayTransaction';
+import Transaction from './Transactions/Transaction';
+
 export {
   // Charts
   // -- Doughnuts
@@ -32,4 +36,8 @@ export {
   Heading,
   Subheading,
   Text,
+
+  // Transactions
+  DayTransaction,
+  Transaction,
 };
