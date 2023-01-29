@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className='flex h-[80%] flex-col items-center justify-evenly  lg:flex-row'>
+    <div className='flex h-[78vh] flex-col items-center justify-evenly lg:flex-row'>
       <Link to='/cashflow' className='text-center font-medium lg:w-[30%]'>
         <h3 className='text-2xl leading-tight lg:text-4xl'>TRACK MY</h3>
         <h1 className='text-6xl leading-tight lg:text-7xl xl:text-8xl 3xl:text-9xl'>
