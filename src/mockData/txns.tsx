@@ -7,7 +7,7 @@ export const txns = [
     expenseAccount: 'SBI',
     incomeAccount: null,
     type: 'expense',
-    note: 'Paid rent via bank',
+    note: `Both of useEffect and useLayoutEffect are used for performing side effects and return an optional cleanup function which means if they don't deal with returning values, no types are necessary. When using useEffect, take care not to return anything other than a`,
     date: '17 Dec',
   },
   {
