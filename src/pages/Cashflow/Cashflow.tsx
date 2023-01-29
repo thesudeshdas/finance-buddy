@@ -6,18 +6,26 @@ import {
   Subheading,
   DayTransaction,
 } from '../../components';
-
+import { useState, useEffect } from 'react';
 import { HiPlus, HiMinus } from 'react-icons/hi2';
 import { txns } from '../../mockData/txns';
 import { filterTransactionsByDate } from '../../utils/fitlerTransactions';
 import { useAccounts } from '../../contexts/accounts/accounts.context';
+import { useTransactions } from '../../contexts/transactions/transactions.context';
 
 export default function Cashflow() {
-  const { state } = useAccounts();
+  const { state: accountsState } = useAccounts();
+  const { state: transactionsState } = useTransactions();
 
-  console.log({ state });
+  const [datedTransactions, setDatedTransactions] = useState<any>([]);
 
-  const datedTransactions = filterTransactionsByDate(txns);
+  useEffect(() => {
+    (async () => {
+      const x = await filterTransactionsByDate(transactionsState.transactions);
+
+      setDatedTransactions(x);
+    })();
+  }, [transactionsState]);
 
   return (
     <div>
@@ -96,7 +104,7 @@ export default function Cashflow() {
 
           <div className='w-[80%] pt-6'>
             {datedTransactions.map(({ date, txns }) => (
-              <DayTransaction date={date} txns={txns} key={date} />
+              <DayTransaction date={date} transactions={txns} key={date} />
             ))}
           </div>
         </section>
