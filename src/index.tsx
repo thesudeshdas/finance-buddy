@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Cashflow, Home } from './pages';
 import AppLayout from './layouts/AppLayout';
+import { AccountsProvider } from './contexts/accounts/accounts.context';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
@@ -27,7 +28,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <RouterProvider router={router} />
+    <AccountsProvider>
+      <RouterProvider router={router} />
+    </AccountsProvider>
   </ApolloProvider>
 );
 

@@ -10,11 +10,14 @@ import {
 import { HiPlus, HiMinus } from 'react-icons/hi2';
 import { txns } from '../../mockData/txns';
 import { filterTransactionsByDate } from '../../utils/fitlerTransactions';
+import { useAccounts } from '../../contexts/accounts/accounts.context';
 
 export default function Cashflow() {
-  const datedTransactions = filterTransactionsByDate(txns);
+  const { state } = useAccounts();
 
-  console.log({ datedTransactions });
+  console.log({ state });
+
+  const datedTransactions = filterTransactionsByDate(txns);
 
   return (
     <div>
